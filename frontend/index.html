@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Upload your resume and get matched to open roles." />
+    <!--
+      Content Security Policy — restricts what this page is allowed to
+      load/execute/connect to, as defense-in-depth against XSS.
+      connect-src must list your backend origin explicitly (a wildcard
+      here would defeat the point); update it if VITE_API_ENDPOINT changes.
+      Note: CSP can only be fully enforced via an HTTP response header set
+      by your server/CDN — this meta tag covers the client during local
+      dev and static hosting, but for production also set it at the
+      server/edge layer, alongside X-Frame-Options and
+      X-Content-Type-Options, which cannot be set via meta tags at all.
+
+      style-src keeps 'unsafe-inline' because React/Framer Motion apply
+      dynamic styles via the element.style API (used throughout this
+      app's animations) rather than injecting <style> tags from strings;
+      script-src has no such exception and stays strict, which is what
+      actually matters for blocking injected/inline script execution.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' http://127.0.0.1:8000 http://localhost:8000; object-src 'none'; base-uri 'none'; form-action 'none';"
+    />
+    <title>Intake — Resume Matching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
