@@ -122,8 +122,6 @@ def fetch_adzuna_jobs(city: str | None = None, role: str | None = None) -> list[
     return list(all_jobs.values())
 
 
-def fetch_all_jobs_from_dataset() -> list[dict]:
-
     all_jobs = []
 
     print(f"Loading dataset from: {DATASET_PATH}")
